@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Youth Cheer Sparkle Showdown</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="header">
+    <nav class="nav container">
+      <ul class="nav-menu">
+        <li><a href="#" class="nav-link active">Home</a></li>
+        <li><a href="#register" class="nav-link">Register</a></li>
+        <li><a href="#details" class="nav-link">Details</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-content container">
+      <h1 class="hero-title">
+        Youth Cheer <span class="sparkle">Sparkle</span> Showdown
+      </h1>
+      <p class="hero-subtitle">Get ready to shine and compete!</p>
+      <a href="#register" class="btn btn-bounce">Register Now</a>
+      <div class="timer" id="countdown-timer" aria-label="Event countdown timer">
+        <div><span id="days">--</span><small>Days</small></div>
+        <div><span id="hours">--</span><small>Hours</small></div>
+        <div><span id="minutes">--</span><small>Minutes</small></div>
+        <div><span id="seconds">--</span><small>Seconds</small></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="register" class="registration container">
+    <h2>Register Your Team</h2>
+    <p>
+      Register your team through the official Google Form:
+    </p>
+    <p>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSex7MqQ87PUQQQ55eCGb88z5ozuaXpy4EZQSpbWWpjeXcZcGQ/viewform?usp=header" target="_blank" rel="noopener noreferrer">
+        Team Registration Form
+      </a>
+    </p>
+    <p><strong>Divisions:</strong></p>
+    <ul class="event-details">
+      <li>Individual Jump and Tumble</li>
+      <li>Performance Routine</li>
+      <li>Gameday Routine</li>
+    </ul>
+  </section>
+
+  <section id="details" class="registration container">
+    <h2>Event Details</h2>
+    <p>
+      The Sparkle Cheer Showdown is a brand new recreational cheer competition designed for rec programs and individuals. There will be two divisions: a Performance Routine and a Game Day Routine. For individuals, there will be a Jump Division and a Tumble Division. The event welcomes cheerleaders from kindergarten through 6th grade. Join us on <strong>November 8th, 2025</strong>, at Bartlesville High School, Phillips Gymnasium for a day full of energy and excitement.
+    </p>
+    <p>
+      Admission is $10 for general entry, payable by Cash App, Venmo, or Cash, with children 3 and under admitted free. Enjoy concessions, $1 shoutouts, a 50-50 raffle, and the chance to pre-order exclusive event t-shirts. Please note, no outside food or drinks are allowed. Local vendors and Rebel Athletic will also be joining us to make the event even more special.
+    </p>
+  </section>
+
+  <section id="contact" class="registration container">
+    <h2>Contact Information</h2>
+    <p>
+      For questions or more information, please email us at:<br />
+      sparklecheershowdown@gmail.com
+    </p>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
+  /* Reset & base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #111;
+  color: #eee;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Header & Nav */
+.header {
+  background: #b30000;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  box-shadow: 0 4px 10px rgba(179, 0, 0, 0.9);
+}
+
+.nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60px;
+  padding: 0 1rem;
+}
+
+.nav-menu {
+  display: flex;
+  list-style: none;
+  gap: 3rem;
+}
+
+.nav-link {
+  color: #eee;
+  text-decoration: none;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  padding: 8px 0;
+  position: relative;
+  transition: color 0.3s ease;
+  font-size: 1.1rem;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: #fff;
+  text-shadow: 0 0 8px #ff4d4d;
+}
+
+.nav-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: #ff4d4d;
+  border-radius: 3px;
+}
+
+/* Hero Section */
+.hero {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  overflow: hidden;
+  background: linear-gradient(135deg, #b30000, #660000);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 10;
+  max-width: 800px;
+  padding: 2rem;
+}
+
+.hero-title {
+  font-size: 3.8rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.3rem;
+  line-height: 1.1;
+  margin-bottom: 1rem;
+  animation: fadeInUp 1.5s ease forwards;
+}
+
+.sparkle {
+  background: linear-gradient(90deg, #fff, #ccc, #fff);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: shimmer 3s linear infinite;
+}
+
+.hero-subtitle {
+  font-size: 1.6rem;
+  margin-bottom: 2rem;
+  font-weight: 600;
+  text-shadow: 0 0 6px #ff4d4d;
+  animation: fadeInUp 1.8s ease forwards;
+}
+
+.btn {
+  background-color: #b30000;
+  color: white;
+  border: 2px solid #fff;
+  padding: 0.75rem 2rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 0.2rem;
+  cursor: pointer;
+  border-radius: 50px;
+  transition: all 0.4s ease;
+  display: inline-block;
+  user-select: none;
+  text-decoration: none;
+}
+
+.btn:hover,
+.btn-bounce:hover {
+  background-color: #ff4d4d;
+  color: #000;
+  border-color: #ff4d4d;
+  box-shadow: 0 0 20px #ff4d4d;
+}
+
+.btn-bounce {
+  animation: bounce 2s infinite;
+}
+
+/* Sections */
+
+section {
+  padding: 4rem 0;
+}
+
+h2 {
+  font-size: 2.8rem;
+  font-weight: 900;
+  color: #b30000;
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+  letter-spacing: 0.2rem;
+  text-align: center;
+}
+
+p {
+  font-size: 1.1rem;
+  max-width: 700px;
+  margin: 0 auto 1rem auto;
+  color: #ddd;
+  line-height: 1.5;
+  text-align: center;
+}
+
+strong {
+  color: #ff4d4d;
+  font-weight: 900;
+}
+
+/* Countdown Timer */
+.timer {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 1rem;
+}
+
+.timer div {
+  background: #222;
+  border: 2px solid #ff4d4d;
+  border-radius: 10px;
+  padding: 1rem 1.5rem;
+  min-width: 80px;
+  text-align: center;
+  color: #fff;
+  user-select: none;
+  box-shadow: 0 0 8px #ff4d4d;
+}
+
+.timer span {
+  font-size: 3rem;
+  font-weight: 900;
+  display: block;
+  letter-spacing: 0.1rem;
+}
+
+.timer small {
+  font-size: 1rem;
+  color: #ff4d4d;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+}
+
+/* Registration Form */
+
+.registration {
+  max-width: 600px;
+  margin: 0 auto;
+  background: #1c1c1c;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 0 15px #b30000;
+  text-align: center;
+  color: #eee;
+}
+
+.registration p {
+  margin-bottom: 1rem;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.registration a {
+  display: inline-block;
+  background-color: #b30000;
+  color: white;
+  padding: 0.75rem 2rem;
+  border-radius: 50px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.registration a:hover {
+  background-color: #ff4d4d;
+  color: #000;
+}
+
+/* Event Details List */
+.event-details {
+  max-width: 600px;
+  margin: 2rem auto 0;
+  list-style: none;
+  color: #ddd;
+  font-weight: 700;
+  font-size: 1.2rem;
+  text-align: center;
+  padding-left: 
+// Set the date for the event (Nov 8, 2025, 9:00 AM)
+const eventDate = new Date('November 8, 2025 09:00:00').getTime();
+
+function updateCountdown() {
+  const now = new Date().getTime();
+  const distance = eventDate - now;
+
+  if (distance < 0) {
+    // Event passed
+    document.getElementById('countdown-timer').innerHTML = '<p>The event has started!</p>';
+    clearInterval(timerInterval);
+    return;
+  }
+
+  const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+  document.getElementById('days').textContent = days.toString().padStart(2, '0');
+  document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+  document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+  document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+}
+
+// Initial call
+updateCountdown();
+// Update every second
+const timerInterval = setInterval(updateCountdown, 1000);
